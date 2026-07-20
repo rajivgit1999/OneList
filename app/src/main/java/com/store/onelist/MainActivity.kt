@@ -6,10 +6,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.store.onelist.ui.theme.OneListTheme
@@ -37,7 +39,7 @@ fun HomeScreen() {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Bottom,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
@@ -56,10 +58,12 @@ fun HomeScreen() {
         Spacer(modifier = Modifier.height(20.dp))
 
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth()
+                .padding(bottom = dimensionResource(R.dimen.size_20)),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             Button(
+                modifier = Modifier.width(dimensionResource(R.dimen.size_150)),
                 onClick = {
                     // Add button action
                 }
@@ -67,6 +71,7 @@ fun HomeScreen() {
                 Text("Add")
             }
             Button(
+                modifier = Modifier.width(dimensionResource(R.dimen.size_150)),
                 onClick = {
                     // Remove button action
                 }
