@@ -110,6 +110,7 @@ fun HomeScreen(storageViewModel: StorageViewModel?) {
             Button(
                 modifier = Modifier.width(dimensionResource(R.dimen.size_150)),
                 onClick = {
+                    if(!text.isEmpty())
                     storageViewModel?.addItems(ListItem(
                         item = text,
                         quantity = 1,
